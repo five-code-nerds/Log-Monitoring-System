@@ -299,11 +299,11 @@ Open your browser and visit:
 | Concept | Where Used |
 |---|---|
 | **Singleton Pattern** | `DatabaseConnection` — one shared DB connection |
-| **DAO Pattern** | `ClientDAO`, `LogDAO`, `AlertDAO` — isolate DB logic |
+| **DAO Pattern** | `ClientRepository`, `LogRepository`, `AlertRepository` — isolate DB logic |
 | **Producer-Consumer Pattern** | `ClientHandler` (producer) → `BlockingQueue` → `LogProcessor` (consumer) |
 | **Thread Pool** | `ExecutorService` in `LogServer` — reuses threads for clients |
 | **JDBC + PreparedStatement** | All DAO classes — safe parameterized SQL queries |
-| **JavaFX MVC** | FXML (View) + Controller + DAO data (Model) |
+| **JavaFX MVC** | View + DAO data (Model) |
 | **Server-Side Rendering** | `HttpApiServer` builds HTML from DB data and serves it |
 | **File Tailing** | `LogFileReader` uses `RandomAccessFile` to detect new lines |
 | **Socket Programming** | `ServerSocket` / `Socket` for client-server TCP communication |
