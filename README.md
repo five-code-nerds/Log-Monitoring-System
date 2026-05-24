@@ -155,8 +155,8 @@ Make sure all of these are installed before running the project:
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/log-monitor-system.git
-cd log-monitor-system
+git@github.com:five-code-nerds/Log-Monitoring-System.git
+cd Log-Monitoring-System 
 ```
 
 ---
