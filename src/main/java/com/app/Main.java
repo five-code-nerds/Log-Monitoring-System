@@ -197,14 +197,8 @@ public class Main extends Application {
                 chartTab
         );
 
-        // =========================
-        // ROOT LAYOUT
-        // =========================
-
         VBox root = new VBox(15);
-
         root.setPadding(new Insets(15));
-
         root.getChildren().addAll(
                 statsBar,
                 buttonBar,

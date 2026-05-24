@@ -235,7 +235,7 @@ public class HttpApiServer {
                 <div class="footer">
                     Auto-refreshes every 10 seconds &nbsp;|&nbsp;
                     Log Monitor System &nbsp;|&nbsp;
-                    Port 8080
+                    Port 3500
                 </div>
             </body>
             </html>

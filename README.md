@@ -52,7 +52,7 @@
 │                     MainApp (Entry Point)               │
 │  ┌─────────────┐   ┌──────────────┐   ┌─────────────┐  │
 │  │  LogServer  │   │ HttpApiServer│   │  JavaFX GUI │  │
-│  │  Port 9090  │   │  Port 8080   │   │  Dashboard  │  │
+│  │  Port 9090  │   │  Port 3500   │   │  Dashboard  │  │
 │  └──────┬──────┘   └──────┬───────┘   └──────┬──────┘  │
 │         │                 │                  │         │
 │   ClientHandler       reads MySQL        reads MySQL   │
@@ -90,7 +90,7 @@
 | **Multi-threading** | Thread pool for clients, BlockingQueue, LogProcessor background thread |
 | **File Processing** | LogFileReader tails `.log` files in real time + CSV export |
 | **Network Programming** | TCP ServerSocket accepting multiple concurrent clients |
-| **Web Programming** | Embedded Java HTTP server serving styled HTML pages on port 8080 |
+| **Web Programming** | Embedded Java HTTP server serving styled HTML pages on port 3500 |
 
 ---
 
@@ -243,7 +243,7 @@ mvn javafx:run
 This starts:
 - ✅ The JavaFX dashboard window
 - ✅ The TCP log server on **port 9090**
-- ✅ The web interface on **port 8080**
+- ✅ The web interface on **port 3500**
 
 ---
 
@@ -252,14 +252,14 @@ This starts:
 Click the **`+`** button in the terminal panel to open a **second terminal**, then run:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.logmonitor.client.ClientApp"
+mvn exec:java -Dexec.mainClass="com.app.client.ClientApp"
 ```
 
 The client will connect to the server and start watching `logs/sample.log` for new lines.
 
 > **To simulate multiple clients**, open more terminals and run with different IDs:
 > ```bash
-> mvn exec:java -Dexec.mainClass="com.logmonitor.client.ClientApp" -Dexec.args="CLIENT-02 logs/sample.log"
+> mvn exec:java -Dexec.mainClass="com.app.client.ClientApp" -Dexec.args="CLIENT-02 logs/sample.log"
 > ```
 
 ---
@@ -285,10 +285,10 @@ Open your browser and visit:
 
 | URL | Description |
 |---|---|
-| `http://localhost:8080/` | Home page — system stats overview |
-| `http://localhost:8080/logs` | Recent log entries (styled table) |
-| `http://localhost:8080/alerts` | Active alerts |
-| `http://localhost:8080/clients` | Connected clients and status |
+| `http://localhost:3500/` | Home page — system stats overview |
+| `http://localhost:3500/logs` | Recent log entries (styled table) |
+| `http://localhost:3500/alerts` | Active alerts |
+| `http://localhost:3500/clients` | Connected clients and status |
 
 > Pages auto-refresh every 10 seconds.
 

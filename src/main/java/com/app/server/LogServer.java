@@ -66,9 +66,4 @@ public class LogServer {
 
         System.out.println("[Server] Stopped.");
     }
-
-    public static void main(String[] args) {
-        LogServer server = new LogServer();
-        server.start();
-    }
 }
